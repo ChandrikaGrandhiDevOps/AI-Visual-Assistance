@@ -1,4 +1,5 @@
-from google import genai
+#from google import genai
+import google.generativeai as genai
 from google.genai import types
 from PIL import Image
 import pyautogui
@@ -11,7 +12,7 @@ import streamlit as st
 load_dotenv()
 
 # Initialize the GenAI client
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+client = genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 
 def capture_screen():
